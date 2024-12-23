@@ -1,0 +1,26 @@
+<html>
+<head>
+  <script src="js/img-loader.js"></script>
+</head>
+<body onload="imgLoader.onLoad();">
+  <input type="button" value="START" onclick="imgLoader.onButtonClicked();" /> <input id="txtTime" type="text" disabled />
+  <br>
+  <div>
+    <canvas id="canvas" width="1280" height="720"></canvas>
+  </div>
+</body>
+
+<script>
+
+    window.addEventListener('load', () => {
+
+        var textBox = document.getElementById('txtTime');
+        setInterval(() => {
+            const now = new Date();
+            const isoString = now.toLocaleString(); // "2024-12-10T05:30:15.123Z"
+            textBox.value = isoString;
+        }, 10);
+    });
+
+</script>
+</html>
